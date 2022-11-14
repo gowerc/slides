@@ -1,0 +1,225 @@
+
+<div class="title">
+
+<h1> My Presentation</h1>
+
+<p>Craig Gower-Page</p>
+<p>2022-01-02</p>
+</div>
+
+---
+
+
+## Basics
+
+
+A paragraph with some text and a [link](http://hakim.se).
+
+<div style="color:red">
+testing
+</div>
+
+
+- point 1
+- point 2
+
+$$
+x = b + y^22
+$$
+
+```js
+console.log(["a", 1, true])
+if (true) {
+    console.log(5)
+}
+```
+
+---
+
+
+## Absolute positioning
+
+<!-- 
+    Slides have a fixed pixel size which means
+    we can used position:absolute to place
+    elements in any fixed spot we want (scaling happens automatically)
+    the "transform" option is used here so our pixel 
+    coordinates are at the centre of the element
+-->
+
+<div
+    style="
+    width:100px; height:100px; background-color:red;
+    position: absolute; left:100; top:200;
+    transform: translate(-50%, -50%)"
+>
+</div>
+
+<div
+    style="
+    width:50; height:50px; background-color:blue;
+    position: absolute; left:700; top:200;
+    transform: translate(-50%, -50%)"
+>
+</div>
+
+<div
+    style="width:100px; height:100px; background-color:green;">
+</div>
+
+---
+
+
+
+## Columns with split width
+
+
+
+<div class="columns">
+
+<div class="text-centre" style="width:30%;">
+    content
+</div>
+
+<div class="text-centre" style="width:70%;">
+    content2
+</div>
+
+</div>
+
+---
+
+
+## Slide 3
+
+random paragraph
+
+```js []
+let a = 1;
+ let b = 2;
+let c = x => 1 + 2 + x;
+c(3);
+```
+
+```r []
+x <- function(y) {
+    1 + 2 = 3
+}
+```
+
+<!--
+Example of doing code blocks in direct html
+data-trim  - Removes training and leading white space
+ -->
+<pre><code data-trim class="language-python">
+
+
+# line comment
+# </br>
+
+def fun(x, y)
+    return x + y
+
+
+</code></pre>
+
+<!-- emmet gets tripped up by Rs arrow syntax as it thinks
+its an open tag. This comment allows it to keep going -->
+
+---
+
+
+## Fade in With Fragments
+
+This slide shows off the use of fragments to fade in content
+
+<div>
+<ul>
+    <li class="fragment">a</li>
+    <li class="fragment">b</li>
+    <li class="fragment">c</li>
+    <li class="fragment">d</li>
+    <li class="fragment">e</li>
+</ul>
+</div>
+<div>
+<ul>
+    <li>e</li>
+    <li>d</li>
+    <li>c</li>
+</ul>
+</div>
+
+---
+
+
+## Switching Out Content
+
+
+<!--
+Each "advance the slide" triggers an action
+
+here we use fragment-index to force
+A and Bs action happens on the same key press
+A's action mean it starts on and fades out
+B's action means it starts off and fades in
+
+The "fade-out" part of the fade-in-then-out action
+always fades out at the start of the next action
+(its not an action in its own right) i.e.
+it will appear to happen at the same time as the 
+next action
+-->
+
+
+<div class="r-stack">
+    <p 
+        class="fragment fade-out"
+        data-fragment-index="0">
+        A 
+    </p>
+    <p 
+        class="fragment fade-in-then-out" 
+        data-fragment-index="0">
+        B 
+    </p>
+    <p 
+        class="fragment fade-in-then-out">
+        C
+    </p>
+    <p
+        class="fragment">
+        D 
+    </p>
+</div>
+
+---
+
+## Slide with speaker notes
+
+
+slide content
+
+<aside class="notes">
+Shhh, these are your private notes
+</aside>
+
+
+Note:
+This is markdown specific syntax for speaker notes
+
+
+---
+
+
+## Filename overlay
+
+
+<div class="file-name">somejsfile.js</div>
+
+```js
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+
+```

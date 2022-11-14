@@ -1,0 +1,74 @@
+
+section {
+    text-align: left;
+}
+
+
+// Increase side of code chunks to be based
+// off of root element size
+.hljs, .hljs-ln-line {
+    font-size: 0.7rem;
+    line-height: 0.85rem;
+    border: 1px solid rgb(221, 221, 221);
+    // Without this code boxes expand to the bottom of the page
+    min-height: 0px !important; 
+}
+
+.code-wrapper {
+    box-shadow: 0px 0px 0px 0px rgb(0, 0, 0, 30%) !important;
+}
+
+
+:root {
+    font-size: var(--r-main-font-size);
+    --r-main-font-size: 24px;
+    --r-main-font: 'Roboto';
+    --r-heading-font: 'Roboto';
+    --r-main-color: rgb(65, 107, 107);
+    --r-heading-color: var(--r-main-color);
+}
+
+
+
+.columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.text-centre {
+    text-align: center;
+}
+
+// CSS for the title slide
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50px;
+    height: var(--slide-height);
+    p {
+        font-size: 0.7em;
+        margin: 0px;
+    }
+}
+
+// By Default reveal auto-capitalises all headings
+h1, h2, h3, h4, h5 {
+    text-transform: none !important;
+}
+
+
+// Meant for labels above a code snippet to show which file they come from
+//  - margin-left/right and width are used to emulate the default code block
+//  - margin bottom counteracts the margin top from the code block
+.file-name {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    margin-bottom: calc(var(--r-block-margin) * -1);
+    font-size: 0.75em;
+    font-weight: normal;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(0, 0, 0);
+}

@@ -3,12 +3,15 @@
     <link rel="stylesheet" href="dist/reveal.css">
     <link rel="stylesheet" href="dist/theme/white.css">
     <link rel="stylesheet" href="plugin/highlight/atom-one.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+    </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown="basic.md"
+        <section data-markdown="content/main.qmd"
                  data-separator-notes="^Note:"
                  data-charset="iso-8859-15">
         </section>
@@ -23,13 +26,20 @@
         import Highlight from './plugin/highlight/highlight.esm.js';
         import Search from './plugin/search/search.esm.js'
         Reveal.initialize({
-            controls: true,
+            width: 960,
+            height: 700,
+            controls: false,
+            controlsTutorial: false,
             progress: true,
             center: false,
             hash: true,
-            transition: "none",
+            hashOneBasedIndex: true,
+            slideNumber: 'c/t',
+            transition: "none", // Causes blur, swithc to "slide" for no blur
             plugins: [ Maths, Zoom, Notes, Search, Markdown, Highlight ]
         });
+
     </script>
   </body>
 </html>
+
